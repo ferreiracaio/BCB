@@ -11,24 +11,24 @@ opp.columns = ['data','ipca']
 
 x = st.slider('x')  # 👈 this is a widget
 
-st.write(x, 'Mova o cursor para alterar o índice', opp.iloc[0:x,:])
+st.write(x, 'Mova o cursor para alterar o índice', opp.iloc[0:x,:],opp.iloc[0:x,:].plot())
 
 
 
 
-with st.echo(code_location='below'):
-    import plotly.express as px
+# with st.echo(code_location='below'):
+#     import plotly.express as px
 
-    fig = px.scatter(
-        x=opp["data"].iloc[0:x,:],
-        y=opp["ipca"].iloc[0:x,:],
-    )
-    fig.update_layout(
-        xaxis_title="data",
-        yaxis_title="ipca",
-    )
+#     fig = px.scatter(
+#         x=opp["data"].iloc[0:x,:],
+#         y=opp["ipca"].iloc[0:x,:],
+#     )
+#     fig.update_layout(
+#         xaxis_title="data",
+#         yaxis_title="ipca",
+#     )
 
-    st.write(fig)
+#     st.write(fig)
 
 
 
