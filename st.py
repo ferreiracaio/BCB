@@ -17,11 +17,11 @@ st.write(x, 'Mova o cursor para alterar o índice', opp.iloc[0:x,:])
 
 for i in range(3):
     if st.checkbox('Show dataframe'):
-    chart_data = pd.DataFrame(
-       np.random.randn(20, 3),
-       columns=['a', 'b', 'c'])
+        chart_data = pd.DataFrame(
+           np.random.randn(20, 3),
+           columns=['a', 'b', 'c'])
 
-    chart_data
+        chart_data
 
 
 
