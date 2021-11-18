@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 import datetime as dt
 import streamlit as st
-import seaborn
-sns.set_theme(style="darkgrid")
 
 opp = pd.read_json("http://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json")
 opp['valor'] = opp['valor'].replace(r'^\s*$', np.nan, regex=True).astype(float)
