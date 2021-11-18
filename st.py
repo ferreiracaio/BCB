@@ -12,7 +12,7 @@ opp.columns = ['data','ipca']
 x = st.slider('x')  # 👈 this is a widget
 
 st.write(x, 'Mova o cursor para alterar o índice', opp.iloc[0:x,:])
-st.write(opp.iloc[0:x,:].plot())
+st.write(opp.iloc[0:x,:].pyplot())
 
 
 
