@@ -9,10 +9,10 @@ opp['valor'] = opp['valor'].replace(r'^\s*$', np.nan, regex=True).astype(float)
 opp['data'] = pd.to_datetime(opp['data'], format = '%d/%m/%Y')
 opp.columns = ['data','ipca']
 
-x = st.slider('x')  # 👈 this is a widget
+x = st.slider('x')
 
 st.write(x, 'Mova o cursor para alterar o índice', opp.iloc[0:x,:])
-st.write(opp.iloc[0:x,:].pyplot())
+st.line_chart(opp.iloc[0:x,:])
 
 
 
