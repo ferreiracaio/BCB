@@ -14,13 +14,14 @@ x = st.slider('x')  # 👈 this is a widget
 
 st.write(x, 'Mova o cursor para alterar o índice', opp.iloc[0:x,:])
 
-if st.checkbox('Show dataframe'):
+
+for i in range(3):
+    if st.checkbox('Show dataframe'):
     chart_data = pd.DataFrame(
        np.random.randn(20, 3),
        columns=['a', 'b', 'c'])
 
     chart_data
-
 
 
 
