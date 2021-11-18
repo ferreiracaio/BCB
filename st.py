@@ -13,9 +13,22 @@ opp.columns = ['data','ipca']
 
 x = st.slider('x')  # 👈 this is a widget
 
-st.write(x, 'Mova o cursor para alterar o índice', seaborn.lineplot(x="data", y="ipca",
-             data=opp.iloc[0:x,:]))
+st.write(x, 'Mova o cursor para alterar o índice', opp.iloc[0:x,:])
 
 
-#sns.lineplot(x="data", y="ipca",
- #            data=opp.iloc[0:x,:])
+with st.echo(code_location='below'):
+    import matplotlib.pyplot as plt
+
+    fig = plt.figure()
+    ax = fig.add_subplot(1,1,1)
+
+    ax.scatter(
+        opp["data"].iloc[0:x,:],
+        opp["ipca"].iloc[0:x,:],
+    )
+
+    ax.set_xlabel("data")
+    ax.set_ylabel("ipca")
+
+    st.write(fig)
+
