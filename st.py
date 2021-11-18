@@ -10,7 +10,7 @@ opp['data'] = pd.to_datetime(opp['data'], format = '%d/%m/%Y')
 opp.columns = ['data','ipca']
 opp = opp.set_index('data')
 
-x = st.slider('x')
+x = st.slider('x',min_value=0, max_value=501)
 
 st.write(x, 'Mova o cursor para alterar o índice', opp.iloc[0:x,:])
 st.line_chart(opp.iloc[0:x,:])
