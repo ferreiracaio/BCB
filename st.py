@@ -8,6 +8,7 @@ opp = pd.read_json("http://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?forma
 opp['valor'] = opp['valor'].replace(r'^\s*$', np.nan, regex=True).astype(float)
 opp['data'] = pd.to_datetime(opp['data'], format = '%d/%m/%Y')
 opp.columns = ['data','ipca']
+opp = opp.set_index('data')
 
 x = st.slider('x')
 
